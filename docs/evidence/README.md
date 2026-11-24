@@ -1,5 +1,9 @@
 # Verificación del taller
 
+## Resultados de software
+
+Se ejecutaron seis pruebas Node.js con éxito, incluida una interrupción simulada y su recuperación mediante HTTP local. El backend compiló con .NET SDK 10.0.100 sin errores ni advertencias. La publicación Release generó el archivo de configuración para IIS y se probó mediante el servidor local de ASP.NET Core. La integración aprobó telemetría, validación, historial, autenticación, auditoría, cambios de alarma, caducidad y recuperación. También se verificó el envío del simulador al backend publicado y la entrega del dashboard y su módulo JavaScript.
+
 ## Pruebas automatizadas
 
 Desde la raíz, ejecuta `node --test tests/*.test.*` en Node.js 22 o posterior. La suite comprueba los sitios estáticos, la presentación de datos recientes y caducados, los huecos del historial, el intervalo del dashboard y el tráfico HTTP del simulador con un servidor de prueba local.
