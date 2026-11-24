@@ -75,4 +75,3 @@ sealed class MonitorStore(string directory)
         return File.Exists(path) ? JsonSerializer.Deserialize<List<T>>(File.ReadAllText(path)) ?? [] : [];
     }
 }
-

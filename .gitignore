@@ -4,4 +4,3 @@ firmware/.pio/
 firmware/include/local_config.h
 **/App_Data/
 *.user
-

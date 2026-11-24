@@ -131,4 +131,3 @@ api.MapPost("/auth/logout", async (HttpContext context) =>
 app.Run();
 
 record Login(string? Username, string? Password);
-

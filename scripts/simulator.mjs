@@ -59,4 +59,3 @@ while (true) {
     if (values.once) break;
     await delay(Math.min(interval, 5) * 1000);
 }
-

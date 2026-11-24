@@ -20,4 +20,3 @@ export function chartData(history, metric) {
     const min = Math.min(...values), max = Math.max(...values);
     return { points, min: min === max ? min - 1 : min, max: min === max ? max + 1 : max };
 }
-

@@ -33,4 +33,3 @@ $testPassword = Read-Host 'Contraseña de la instancia de pruebas'
 | Fuente autónoma | Tabla de conexiones y guía de regulación | Medir tensión y autonomía bajo carga |
 
 El umbral de gas se expresa en ADC. La calibración y los resultados físicos se registran al ejecutar el montaje.
-

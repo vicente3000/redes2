@@ -154,4 +154,3 @@ el('controls').addEventListener('click', async event => {
 });
 refresh();
 setInterval(refresh, 30000);
-

@@ -29,4 +29,3 @@ node scripts/simulator.mjs --url http://127.0.0.1:5080 --high-gas --offline-afte
 ```
 
 Abre http://127.0.0.1:5080, selecciona **Simulación** y observa las lecturas. Inicia sesión con el usuario `admin` y la contraseña elegida. El aviso de gas se rige por el umbral ADC configurado. La orden manual de alarma de la simulación tiene su propio estado e historial.
-

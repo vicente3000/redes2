@@ -38,4 +38,3 @@ if($StaleTimeoutSeconds -gt 0){
   if((Check GET '/api/sensors/latest?source=simulator' 200).stale){throw 'La fuente no recuperó frescura'}
 }
 'Integración API aprobada'
-

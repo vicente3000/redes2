@@ -36,4 +36,3 @@ New-NetFirewallRule -DisplayName 'Taller WiFi IIS' -Direction Inbound -Action Al
 Desde otro PC, ejecuta `Test-NetConnection 10.0.0.10 -Port 8082`. En PC y teléfono abre los sitios estáticos y `http://10.0.0.10:8082/api/health`. Abre el dashboard por HTTPS para entrar como administrador. Ante error, revisa IP, binding y firewall. Un 503 en login indica que falta el hash de configuración. El servicio acepta telemetría HTTP en la LAN de laboratorio, por lo que el origen `device` identifica el canal declarado por el cliente.
 
 [Guía oficial de publicación en IIS para ASP.NET Core 10](https://learn.microsoft.com/aspnet/core/host-and-deploy/iis/?view=aspnetcore-10.0)
-

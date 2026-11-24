@@ -10,4 +10,3 @@ for (const site of ['red', 'diagnostico']) {
     assert.match(html, /<main/);
   });
 }
-

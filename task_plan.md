@@ -6,4 +6,3 @@
 - [ ] Ejecutar pruebas de integración y documentar despliegue, conexiones y evidencias.
 
 El repositorio estaba vacío. Se usarán ramas acumulativas con commits por componente, si el entorno permite actualizar Git.
-

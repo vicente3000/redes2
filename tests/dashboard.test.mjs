@@ -25,4 +25,3 @@ test('el dashboard incluye las cuatro lecturas y programa su actualización', ()
     assert.match(html, /id="controls" hidden/);
     assert.match(script, /setInterval\(refresh, 30000\)/);
 });
-
