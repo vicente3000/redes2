@@ -19,4 +19,3 @@ async function update(){
 }
 update();
 </script></html>)HTML";
-

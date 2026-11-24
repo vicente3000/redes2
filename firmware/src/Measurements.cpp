@@ -25,20 +25,18 @@ void beginMeasurements() {
     printLine(0, "Midiendo...");
 }
 
-Measurements readMeasurements() {
+Measurements readMeasurements(bool includeGas) {
     Measurements data;
     data.temperature = dht.readTemperature();
     data.humidity = dht.readHumidity();
     data.light = analogRead(Config::light);
-#if SERVICE == 4
-    data.gas = analogRead(Config::gas);
-#endif
+    if (includeGas) data.gas = analogRead(Config::gas);
     data.ready = true;
     if (isnan(data.temperature) || isnan(data.humidity)) Serial.println("Error de lectura DHT11");
     return data;
 }
 
-void showMeasurements(const Measurements& data) {
+void showMeasurements(const Measurements& data, bool includeGas) {
     char line[32];
     if (isnan(data.temperature) || isnan(data.humidity)) {
         printLine(0, "DHT11 sin datos");
@@ -46,11 +44,8 @@ void showMeasurements(const Measurements& data) {
         snprintf(line, sizeof(line), "T:%.0fC H:%.0f%%", data.temperature, data.humidity);
         printLine(0, line);
     }
-#if SERVICE == 4
-    snprintf(line, sizeof(line), "L:%d G:%d", data.light, data.gas);
-#else
-    snprintf(line, sizeof(line), "Luz:%d ADC", data.light);
-#endif
+    if (includeGas) snprintf(line, sizeof(line), "L:%d G:%d", data.light, data.gas);
+    else snprintf(line, sizeof(line), "Luz:%d ADC", data.light);
     printLine(1, line);
 }
 
@@ -69,4 +64,3 @@ String encodeMeasurements(const Measurements& data, bool remote) {
     serializeJson(doc, json);
     return json;
 }
-

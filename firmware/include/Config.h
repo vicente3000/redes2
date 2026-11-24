@@ -20,4 +20,3 @@ constexpr uint32_t telemetryMs = 30000;
 constexpr uint32_t alarmMs = 5000;
 constexpr uint32_t retryMs = 15000;
 }
-

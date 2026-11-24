@@ -9,8 +9,7 @@ struct Measurements {
     bool ready = false;
 };
 
-Measurements readMeasurements();
+Measurements readMeasurements(bool includeGas);
 void beginMeasurements();
-void showMeasurements(const Measurements& data);
+void showMeasurements(const Measurements& data, bool includeGas);
 String encodeMeasurements(const Measurements& data, bool remote);
-

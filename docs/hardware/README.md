@@ -26,3 +26,8 @@ pio device monitor -b 115200
 
 Cambia el entorno a `servicio-3` o `servicio-4` y especifica `--upload-port COMx` si hay varias placas. El servicio 2 imprime la IP del AP. El servicio 3 imprime la IP que entrega DHCP y reintenta al perder conexión. El servicio 4 informa los códigos HTTP y usa timeouts acotados. Si el servidor deja de responder, el buzzer conserva la última orden válida hasta recibir otra o reiniciarse.
 
+## Un solo firmware para los servicios 2, 3 y 4
+
+Compila y carga el perfil combinado con `pio run -d firmware -e taller-completo -t upload`. Abre el monitor serie a 115200 y envía `2`, `3` o `4`. La placa guarda la selección en su memoria y reinicia en ese modo. Envía `?` para conocer el modo actual. En el primer arranque selecciona el servicio 2 si aún no hay un modo guardado.
+
+Los sitios del servicio 1 y el dashboard del servicio 4 se publican en IIS. En el modo 4 la placa consulta y alimenta ese servidor mediante HTTP.
