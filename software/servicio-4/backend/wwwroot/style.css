@@ -1,0 +1,35 @@
+:root{color-scheme:light;--ink:#16352b;--accent:#246443;--muted:#526d61;--line:#c9d8cc;--white:#fffefa;--warn:#952f21;font:16px/1.45 system-ui,sans-serif;color:var(--ink);background:#edf3ec}
+*{box-sizing:border-box}
+body{margin:0}
+main{width:min(1180px,100% - 2rem);margin:clamp(1.5rem,5vw,4.5rem) auto}
+header,.section-header,.status{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap}
+h1,h2,h3,p{margin:0}
+h1{font-size:clamp(2.3rem,6vw,5rem);letter-spacing:-.07em;line-height:1}
+.eyebrow{color:var(--accent);font-weight:700;margin-bottom:.65rem}
+.status{margin:1.4rem 0 .9rem;border-top:1px solid var(--line);padding-top:.9rem}
+.status span,.quiet,small{color:var(--muted)}
+.readings,.panels{display:grid;gap:.85rem}
+.readings{grid-template-columns:repeat(4,1fr)}
+.panels{grid-template-columns:2fr 1fr;margin-top:.85rem}
+article,.panel{background:var(--white);border:1px solid var(--line);padding:clamp(.8rem,2vw,1.4rem);min-width:0}
+article{border-top:4px solid var(--accent)}
+article h2{font-size:1rem}
+article p{font-size:clamp(2rem,4.4vw,3.5rem);font-weight:700;letter-spacing:-.075em;font-variant-numeric:tabular-nums}
+canvas{display:block;width:100%;margin:1rem 0}
+.pill{display:inline-block;background:#dcece0;padding:.35rem .65rem;margin:.8rem 0;font-weight:700}
+.warning{color:var(--warn)}
+.pill.warning{background:#f8e4dd}
+details,.buttons,#controls{margin-top:1rem}
+summary{cursor:pointer}
+form{display:grid;gap:.65rem;margin:.65rem 0}
+form input{display:block;width:100%}
+select,input,button{font:inherit;padding:.48rem .6rem;border:1px solid #81988b;border-radius:.25rem;color:inherit;background:white}
+button{cursor:pointer}
+button:disabled{opacity:.55;cursor:default}
+button.danger{background:var(--warn);color:white;border-color:var(--warn)}
+:focus-visible{outline:3px solid #2d8457;outline-offset:2px}
+.buttons{display:flex;flex-wrap:wrap;gap:.45rem}
+#actionStatus{margin-top:.55rem}
+#events{padding-left:1.2rem;max-height:10rem;overflow:auto}
+@media(max-width:760px){.panels{grid-template-columns:1fr}.readings{grid-template-columns:repeat(2,1fr)}}
+

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monitor ambiental | Taller WiFi</title><link rel="stylesheet" href="style.css"><script type="module" src="dashboard.mjs"></script>
+</head>
+<body>
+<main>
+<header><div><p class="eyebrow">Taller WiFi · Redes II</p><h1>Monitor ambiental</h1></div>
+<label>Origen <select id="source"><option value="device">ESP32</option><option value="simulator">Simulación</option></select></label></header>
+<div class="status" role="status"><strong id="connection">Consultando telemetría…</strong><span id="updated">Sin actualización</span></div>
+<section class="readings" aria-label="Mediciones actuales">
+<article><h2>Temperatura</h2><p id="temperature">—</p><small>°C</small></article>
+<article><h2>Humedad relativa</h2><p id="humidity">—</p><small>%</small></article>
+<article><h2>Luminosidad</h2><p id="light">—</p><small>ADC</small></article>
+<article><h2>Nivel de gas</h2><p id="gas">—</p><small>ADC</small></article>
+</section>
+<div class="panels">
+<section class="panel"><div class="section-header"><h2>Historial</h2><label>Sensor <select id="metric"><option value="temperature">Temperatura</option><option value="humidity">Humedad</option><option value="light">Luminosidad</option><option value="gas">Gas</option></select></label></div>
+<canvas id="chart" width="680" height="260" role="img" aria-label="Historial del sensor seleccionado"></canvas>
+<p id="chartInfo" class="quiet">Esperando mediciones</p></section>
+<section class="panel"><h2>Alarma manual</h2><p id="alarm" class="pill">Consultando estado…</p>
+<p id="gasNotice" class="quiet">Sin lectura de gas</p>
+<details id="login"><summary>Iniciar sesión</summary><form id="loginForm">
+<label>Usuario <input name="username" autocomplete="username" required></label>
+<label>Contraseña <input name="password" type="password" autocomplete="current-password" required></label>
+<button>Ingresar</button></form></details>
+<div id="controls" hidden><div class="buttons"><button data-command="activate" class="danger">Activar alarma</button><button data-command="deactivate">Desactivar alarma</button></div>
+<h3>Eventos recientes</h3><ul id="events"></ul><button data-command="logout">Cerrar sesión</button></div>
+<p id="actionStatus" role="status"></p></section></div>
+</main>
+</body></html>
